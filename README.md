@@ -6,7 +6,7 @@
 **Course:** Databases · THGA Bochum
 **Duration:** 60 minutes
 **Instructor:** Stephan Bökelmann · [sboekelmann@ep1.rub.de](mailto:sboekelmann@ep1.rub.de)
-
+**Student:** Ahmad hoteit .
 ---
 
 ## Learning Objective
@@ -113,9 +113,11 @@ cat sensordata/T01_2026-03-01.csv
 > 2026-03-01T18:00:00,T01,bochum,27.1
 > ```
 
-> **Screenshot 2:** Take a screenshot showing the output of `ls sensordata/ | head -8` and the contents of one CSV file, and insert it here.
->
-> `[insert screenshot]`
+> **Screenshots 2:** Take a screenshot showing the output of `ls sensordata/ | head -8` and the contents of one CSV file, and insert it here.
+><img width="343" height="125" alt="9" src="https://github.com/user-attachments/assets/c03f5ed3-31ae-4be7-87b1-1f4a7373891a" />
+
+><img width="472" height="71" alt="10" src="https://github.com/user-attachments/assets/981efb47-fc46-4594-bb14-71b67bc62c40" />
+
 
 ### What does the script do, line by line?
 
