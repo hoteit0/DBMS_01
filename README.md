@@ -527,7 +527,8 @@ Sql is called a *declarative* language: you describe *what* you want, not *how* 
 > **Screenshot 7:** Take a final screenshot of your terminal showing the SQLite prompt with a query of your own invention on the `readings` table — one you came up with yourself that goes beyond the tasks above — and insert it here.
 >
 > 
-> <img width="509" height="207" alt="17" src="https://github.com/user-attachments/assets/c3d7555d-dc47-4d69-879b-7eee778a9a16" />
+> <img width="335" height="199" alt="20" src="https://github.com/user-attachments/assets/11d43d4f-3997-4008-8571-e1b381f2a6b6" />
+
 
 
 ---
