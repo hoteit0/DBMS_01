@@ -368,21 +368,26 @@ EOF
 
 > **Screenshot 5:** Take a screenshot showing the output of the Task 2 SQLite query and insert it here.
 >
-> `[insert screenshot]`
+> <img width="446" height="501" alt="15" src="https://github.com/user-attachments/assets/4f253829-1c6e-4338-98d9-5bf7e87b5082" />
+
+> 
 
 ### Questions for Task 2
 
 **Question 2.1:** The shell solution filters by date using `grep -rh "2026-03"`. What problem could arise if a sensor value happened to contain the string `2026-03` — for example as part of an error note? How does the SQL solution handle this problem?
 
-> *Your answer:*
+> grep searches the entire row risking false positives if "2026-03" appears elsewhere,
+> SQL prevents this by filtering only the specific timestamp column.
 
 **Question 2.2:** The SQL solution uses `timestamp LIKE '2026-03-%'` for the date filter instead of a proper date function. Name one advantage and one disadvantage of this approach.
 
-> *Your answer:*
+> + : It is extremely fast because the database can use a simple text index instead of calculating a date function for every single row.
+> - : It is brittle and lacks logic; it will match fake dates like "2026-03-99" and completely break if the date format ever change.
+
 
 **Question 2.3:** The SQL solution returns results sorted by `ORDER BY value_celsius DESC`. The shell solution does not include this sorting. Extend the shell solution to also sort by temperature in descending order and write your command here.
 
-> *Your answer (extended shell command):*
+> *Your answer (extended shell command):* grep -rh "2026-03" sensordata/ | grep -v "^timestamp" | awk -F',' '$4 > 25.0 {print $1, $2, $4}' | sort -k3 -nr
 
 ---
 
