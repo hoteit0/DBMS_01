@@ -504,26 +504,30 @@ After completing all three tasks, answer the following questions:
 **Question A — Writing effort:**
 Which approach was easier to write correctly on the first try? Explain which properties of each language contributed to this.
 
-> *Your answer:*
+> SQL. Its readable, column-based syntax is more intuitive than managing complex shell abstract field numbers.
 
 **Question B — Extensibility:**
 What would you need to change in the shell solution if a fifth sensor `T05` were added? What about the SQL solution? Which approach scales better — and why?
 
-> *Your answer:*
+> Sql scales better because its logic is independent of file counts or naming, unlike shell patterns which require manual updates.
 
 **Question C — Performance:**
 The shell solution reads files from disk on every invocation. A database can cache frequently queried data in memory. What does this mean for performance with 10 000 sensors and multi-year measurement data?
 
-> *Your answer:*
+> Sql is faster, it uses indexing and caching instead of scanning every file on the disk.
 
 **Question D — Declarative vs. imperative:**
 SQL is called a *declarative* language: you describe *what* you want, not *how* to compute it. Bash/awk, by contrast, are *imperative*: you write step by step how the result is to be computed. In which of the three tasks did you feel this difference most clearly? Justify your choice.
 
-> *Your answer:*
+
+> SQL calculates statistics automatically, whereas awk requires manual, step-by-step programming.
+
 
 > **Screenshot 7:** Take a final screenshot of your terminal showing the SQLite prompt with a query of your own invention on the `readings` table — one you came up with yourself that goes beyond the tasks above — and insert it here.
 >
-> `[insert screenshot]`
+> 
+> <img width="509" height="207" alt="17" src="https://github.com/user-attachments/assets/c3d7555d-dc47-4d69-879b-7eee778a9a16" />
+
 
 ---
 
