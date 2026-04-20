@@ -288,15 +288,15 @@ Answer the following questions in your own words and add your answers directly b
 
 **Question 1.1:** Why is `grep -v "^timestamp"` needed in the shell solution even though the files are already filtered with `grep -h "T02"`? Could this step be omitted? Justify your answer.
 
-> *Your answer:*
+> This step can be omitted because the header does not contain 'T02' and is naturally filtered out anyway. However, explicitly removing it serves as a best-practice safety net in case future dataset changes accidentally match the search string.
 
 **Question 1.2:** The shell solution uses `sensordata/T02_*.csv` as a file pattern, even though `grep -h "T02"` already filters for `T02`. Why is the file pattern still important — and what would happen if you used `sensordata/*.csv` instead?
 
-> *Your answer:*
+> The problem with ( grep ) is that it searches the entire line of text, which would lead to a false positive if "2026-03" appeared in an error note or location name. The SQL solution avoids this entirely by restricting the search to a specific column using ( WHERE timestamp LIKE '2026-03-%' ), ensuring only the actual date is checked.
 
 **Question 1.3:** The SQL solution uses `ORDER BY timestamp` even though `timestamp` is stored as type `TEXT`. Why does chronological sorting still work correctly? Under what condition would it fail?
 
-> *Your answer:*
+> Chronological sorting succeeds because the data uses the YYYY-MM-DD format, meaning alphabetical order perfectly matches time order. This approach would fail if the date format used a different structure, like DD.MM.YYYY, or if the numbers lacked zero-padding
 
 ---
 
