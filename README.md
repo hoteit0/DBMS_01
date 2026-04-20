@@ -381,13 +381,13 @@ EOF
 
 **Question 2.2:** The SQL solution uses `timestamp LIKE '2026-03-%'` for the date filter instead of a proper date function. Name one advantage and one disadvantage of this approach.
 
-> + : It is extremely fast because the database can use a simple text index instead of calculating a date function for every single row.
-> - : It is brittle and lacks logic; it will match fake dates like "2026-03-99" and completely break if the date format ever change.
+> Advantage: It is extremely fast because the database can use a simple text index instead of calculating a date function for every single row.
+> Disadvantage: It is brittle and lacks logic; it will match fake dates like "2026-03-99" and completely break if the date format ever change.
 
 
 **Question 2.3:** The SQL solution returns results sorted by `ORDER BY value_celsius DESC`. The shell solution does not include this sorting. Extend the shell solution to also sort by temperature in descending order and write your command here.
 
-> *Your answer (extended shell command):* grep -rh "2026-03" sensordata/ | grep -v "^timestamp" | awk -F',' '$4 > 25.0 {print $1, $2, $4}' | sort -k3 -nr
+> grep -rh "2026-03" sensordata/ | grep -v "^timestamp" | awk -F',' '$4 > 25.0 {print $1, $2, $4}' | sort -k3 -nr
 
 ---
 
