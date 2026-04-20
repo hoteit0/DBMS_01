@@ -382,6 +382,7 @@ EOF
 **Question 2.2:** The SQL solution uses `timestamp LIKE '2026-03-%'` for the date filter instead of a proper date function. Name one advantage and one disadvantage of this approach.
 
 > Advantage: It is extremely fast because the database can use a simple text index instead of calculating a date function for every single row.
+> 
 > Disadvantage: It is brittle and lacks logic; it will match fake dates like "2026-03-99" and completely break if the date format ever change.
 
 
